@@ -1,0 +1,4 @@
+#labels LotroStat
+I need help with this software.  Especially in roadmap suggestions, testing and patch submissions.
+
+Please send patches or bug reports for now to sparthir@gmail.com
