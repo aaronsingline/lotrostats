@@ -1,0 +1,5 @@
+#labels Features,LotroStats
+Currently LotroStats can:
+  * Poll the data.lotro.com server
+  * Collect and store XML data with a timestamp for the filename.
+  * Parse an XML File and show the difference between two characters with basic statistics.
