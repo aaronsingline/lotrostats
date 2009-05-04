@@ -31,7 +31,7 @@ require_once('functions.php');
 
 $xml = new Xml;
 
-// --> TODO: Change to a GET from POST.
+// TODO: Change to a GET from POST.
 $WorldName = 'Windfola';
 $CharacterName = 'Sparthir';
 
@@ -45,21 +45,21 @@ if ($XMLCharacterName) { // If the character exists then we can proceed.
 	$worldDir = $charactersDir.'/'.$WorldName;
 	$charDir = $worldDir.'/'.$CharacterName;
 
-	// --> Makes sure the World and kinship directories exist and have the right permissions.
+	// Makes sure the World and kinship directories exist and have the right permissions.
 	setupDir($worldDir);
 	setupDir($charDir);
 
-	// --> Sets up the time stamp for the filename
-	date_default_timezone_set('Pacific/Auckland'); //Sets the default timezone.
+	// Sets up the time stamp for the filename.
+	date_default_timezone_set('Pacific/Auckland'); // Sets the default timezone.
 	$today = date("YmdHis"); // Date formate in YearMonthDayHoursMinutesSeconds.
 
 	$OutputFileName = $charDir.'/'.$today.'.xml';  //Name of the file to output.
 
-	// --> Writes out the file the file.
+	// Writes out the file the file.
 	print_r($XMLData); // For testing.
-	if(file_put_contents($OutputFileName, $XMLData) === FALSE)
-		echo 'There was an error creating '.$OutputFileName.'!';
+	if(file_put_contents($OutputFileName, $XMLData) === FALSE)  // Write out the contents to the right file.
+		echo 'There was an error creating '.$OutputFileName.'!';  // If there is an error it will write a warning.
 	else
-		system('chown -R '.$permuser.':'.$permgroup.' '.$OutputFileName);
+		system('chown -R '.$permuser.':'.$permgroup.' '.$OutputFileName);  // Set the files to have the right permissions.
 }
 ?>
