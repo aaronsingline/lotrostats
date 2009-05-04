@@ -52,8 +52,8 @@ $Fate[0] = $out['character']['stats']['stat-ATTR']['7']['value'];
 
 // -- Second Character -- //
 $XMLSourceData = file_get_contents('http://data.lotro.com/'.$apilogin.'/'.$apikey.'/charactersheet/w/Windfola/c/Sparthir/');
-$XMLDocument = str_replace(array("\r\n", "\n", "\r"),'',$XMLSourceData);
-$XMLDocument = str_replace('> <','><',$XMLDocument);
+$XMLDocument = str_replace(array("\r\n", "\n", "\r"),'',$XMLSourceData);  // Remove linebreaks to tidy the XML.
+$XMLDocument = str_replace('> <','><',$XMLDocument); // Remove spaces between element tags.
 
 // Get the XML data and put it into an array.
 $out = $xml->parse($XMLDocument, NULL);

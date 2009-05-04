@@ -1,0 +1,15 @@
+body {
+	font-family: verdana, helvetica;
+	background: #ffffff;
+	margin: 0;
+	padding: 0;
+}
+td {
+	padding: 10px;
+	text-align:right;
+}
+
+a, a:visted, a:hover, a:active {
+	color: #0033ff;
+}
+
